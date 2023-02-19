@@ -17,6 +17,7 @@
     "url": "https://github.com/YuriyLvov/frontend-project-44/issues"
   },
   "bin": {
+    "brain-calc": "bin/brain-calc.js",
     "brain-games": "bin/brain-games.js",
     "brain-even": "bin/brain-even.js"
 

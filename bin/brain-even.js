@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import starBrainEvenGame from '../src/evengame.js';
+import starBrainEvenGame from '../src/games/evengame.js';
 
 starBrainEvenGame();

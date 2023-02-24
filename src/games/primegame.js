@@ -1,17 +1,5 @@
 import readlineSync from 'readline-sync';
-import { getRandomNumber, engine } from '../index.js';
-
-const isPrime = (n) => {
-  if (n < 2) {
-    return false;
-  }
-  for (let i = 2; i ** 2 <= n; i += 1) {
-    if (n % i === 0) {
-      return false;
-    }
-  }
-  return true;
-};
+import { getRandomNumber, engine, isPrime } from '../index.js';
 
 const primeGame = () => {
   const num = getRandomNumber(0, 99);

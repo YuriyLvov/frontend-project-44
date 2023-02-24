@@ -28,3 +28,27 @@ export const engine = (runGame, greeting) => {
 
   console.log(`Congratulations, ${userName}!`);
 };
+
+export const getNod = (a, b) => {
+  let divisor = 1;
+  // looping from 1 to a and b
+  for (let i = 1; i <= a && i <= b; i += 1) {
+    // check if is factor of both integers
+    if (a % i === 0 && b % i === 0) {
+      divisor = i;
+    }
+  }
+  return divisor;
+};
+
+export const isPrime = (n) => {
+  if (n < 2) {
+    return false;
+  }
+  for (let i = 2; i ** 2 <= n; i += 1) {
+    if (n % i === 0) {
+      return false;
+    }
+  }
+  return true;
+};

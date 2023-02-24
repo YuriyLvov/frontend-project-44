@@ -47,8 +47,7 @@ const calcGame = () => {
 };
 
 const startCalcGame = () => {
-  console.log('What is the result of the expression?');
-  engine(calcGame);
+  engine(calcGame, 'What is the result of the expression?');
 };
 
 export default startCalcGame;

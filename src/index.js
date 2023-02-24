@@ -9,8 +9,9 @@ export const startNewGame = () => {
 
 export const getRandomNumber = (min, max) => Math.floor(min + Math.random() * (max - min));
 
-export const engine = (runGame) => {
+export const engine = (runGame, greeting) => {
   const userName = startNewGame();
+  console.log(greeting);
 
   let i = 0;
   while (i < 3) {

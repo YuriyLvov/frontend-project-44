@@ -46,8 +46,7 @@ const progressionGame = () => {
 };
 
 const startProgressionGame = () => {
-  console.log('What number is missing in the progression?');
-  engine(progressionGame);
+  engine(progressionGame, 'What number is missing in the progression?');
 };
 
 export default startProgressionGame;

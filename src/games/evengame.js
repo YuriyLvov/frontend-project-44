@@ -31,8 +31,7 @@ const brainEvenGame = () => {
 };
 
 const starBrainEvenGame = () => {
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  engine(brainEvenGame);
+  engine(brainEvenGame, 'Answer "yes" if the number is even, otherwise answer "no".');
 };
 
 export default starBrainEvenGame;

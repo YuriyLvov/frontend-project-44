@@ -3,10 +3,14 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/a49fba33b9167536f2aa/maintainability)](https://codeclimate.com/github/YuriyLvov/frontend-project-44/maintainability)
 
+### Brain-even-game
 [![asciicast](https://asciinema.org/a/559908.svg)](https://asciinema.org/a/559908)
 
-[![asciicast](https://asciinema.org/a/UBkwRZPv7LkeIyONMoIK7OGel.svg)](https://asciinema.org/a/UBkwRZPv7LkeIyONMoIK7OGel)
+### Brain-calculator-game
+[![asciicast](https://asciinema.org/a/qUWRedVEHzhWwU9QyscUnicny.svg)](https://asciinema.org/a/qUWRedVEHzhWwU9QyscUnicny)
 
-[![asciicast](https://asciinema.org/a/aqB6SpJ5khq8C90jMmkk9E8f1.svg)](https://asciinema.org/a/aqB6SpJ5khq8C90jMmkk9E8f1)
+### Brain-gcd-game
+[![asciicast](https://asciinema.org/a/zzNiTnihvnzog5tgf8QHzug0a.svg)](https://asciinema.org/a/zzNiTnihvnzog5tgf8QHzug0a)
 
-[![asciicast](https://asciinema.org/a/cHnlbwcjDJd2i5Q4w6nuVNQvN.svg)](https://asciinema.org/a/cHnlbwcjDJd2i5Q4w6nuVNQvN)
+### Brain-progression-game
+[![asciicast](https://asciinema.org/a/O3k1H88Rl9dN4M83isERnJR9U.svg)](https://asciinema.org/a/O3k1H88Rl9dN4M83isERnJR9U)

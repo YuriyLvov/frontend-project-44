@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { getRandomNumber, engine } from '../index.js';
+import { getRandomNumber, engine, checkBinaryQuestion } from '../index.js';
 
 const brainEvenGame = () => {
   const randomNumber = getRandomNumber(1, 10);
@@ -9,25 +9,7 @@ const brainEvenGame = () => {
 
   const userAnswer = readlineSync.question('Your answer: ').toLowerCase();
 
-  if ((userAnswer === 'yes' && isEven) || (userAnswer === 'no' && !isEven)) {
-    return true;
-  }
-
-  if (userAnswer !== 'yes' && userAnswer !== 'no') {
-    console.log(
-      `'${userAnswer}' is wrong answer ;(. Correct answer was 'yes' or 'no'.`,
-    );
-  }
-
-  if (userAnswer === 'yes' && !isEven) {
-    console.log('"yes" is wrong answer ;(. Correct answer was "no".');
-  }
-
-  if (userAnswer === 'no' && isEven) {
-    console.log('"no" is wrong answer ;(.\nCorrect answer was "yes".');
-  }
-
-  return false;
+  return checkBinaryQuestion(userAnswer, isEven);
 };
 
 const starBrainEvenGame = () => {

@@ -74,3 +74,50 @@ export const checkBinaryQuestion = (userAnswer, correctAnswer) => {
 
   return false;
 };
+
+export const getCalcOperation = () => {
+  const operationId = getRandomNumber(0, 3);
+
+  let operation = '';
+  if (operationId === 0) {
+    operation = '+';
+  } else if (operationId === 1) {
+    operation = '-';
+  } else if (operationId === 2) {
+    operation = '*';
+  }
+
+  return operation;
+};
+
+export const calcOperation = (firstNum, secondNum, operation) => {
+  let result = null;
+
+  if (operation === '+') {
+    result = firstNum + secondNum;
+  } else if (operation === '-') {
+    result = firstNum - secondNum;
+  } else if (operation === '*') {
+    result = firstNum * secondNum;
+  }
+
+  return result;
+};
+
+export const checkNumberQuestion = (userAnswer, correctAnswer) => {
+  const userAnswerNumber = Number(userAnswer);
+
+  if (!userAnswerNumber && userAnswerNumber !== 0) {
+    console.log(`'${userAnswer}' is wrong answer ;(. The answer should be a number`);
+    return false;
+  }
+
+  if (correctAnswer !== userAnswerNumber) {
+    console.log(
+      `'${userAnswerNumber}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`,
+    );
+    return false;
+  }
+
+  return true;
+};

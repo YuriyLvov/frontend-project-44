@@ -1,7 +1,22 @@
 import readlineSync from 'readline-sync';
-import { getRandomNumber, engine, getNod } from '../index.js';
+import engine from '../index.js';
+import {
+  getRandomNumber,
+} from '../utils.js';
 
-const nodGame = () => {
+const getNod = (a, b) => {
+  let divisor = 1;
+  // looping from 1 to a and b
+  for (let i = 1; i <= a && i <= b; i += 1) {
+    // check if is factor of both integers
+    if (a % i === 0 && b % i === 0) {
+      divisor = i;
+    }
+  }
+  return divisor;
+};
+
+const getAnswerAndQuestion = () => {
   const firstNum = getRandomNumber(1, 99);
   const secondNum = getRandomNumber(1, 99);
 
@@ -28,7 +43,7 @@ const nodGame = () => {
 };
 
 const startNodGame = () => {
-  engine(nodGame, 'Find the greatest common divisor of given numbers.');
+  engine(getAnswerAndQuestion, 'Find the greatest common divisor of given numbers.');
 };
 
 export default startNodGame;

@@ -1,15 +1,19 @@
 import readlineSync from 'readline-sync';
-import { getRandomNumber, engine } from '../index.js';
+import engine from '../index.js';
+import {
+  getRandomNumber,
+} from '../utils.js';
 
-const progressionGame = () => {
+const getProgression = (firstElement, length, step) => Array.from({ length }).map(
+  (el, i) => firstElement + (i * step),
+);
+
+const getAnswerAndQuestion = () => {
   const progressionLength = getRandomNumber(5, 10);
   const progressionFirstElement = getRandomNumber(0, 99);
   const progressionStep = getRandomNumber(1, 9);
 
-  const progression = Array.from({ length: progressionLength }).map(
-    (el, i) => progressionFirstElement + (i * progressionStep),
-  );
-
+  const progression = getProgression(progressionFirstElement, progressionLength, progressionStep);
   const remmovedElementIndex = getRandomNumber(0, progressionLength);
   const removedElement = progression[remmovedElementIndex];
 
@@ -46,7 +50,7 @@ const progressionGame = () => {
 };
 
 const startProgressionGame = () => {
-  engine(progressionGame, 'What number is missing in the progression?');
+  engine(getAnswerAndQuestion, 'What number is missing in the progression?');
 };
 
 export default startProgressionGame;

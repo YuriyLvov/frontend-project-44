@@ -1,8 +1,7 @@
-import readlineSync from 'readline-sync';
 import engine from '../index.js';
-import {
-  getRandomNumber,
-} from '../utils.js';
+import getRandomNumber from '../utils.js';
+
+const description = 'What is the result of the expression?';
 
 const getCalcOperation = () => {
   const operationId = getRandomNumber(0, 3);
@@ -33,40 +32,18 @@ const calcOperation = (firstNum, secondNum, operation) => {
   return result;
 };
 
-const checkNumberQuestion = (userAnswer, correctAnswer) => {
-  const userAnswerNumber = Number(userAnswer);
-
-  if (!userAnswerNumber && userAnswerNumber !== 0) {
-    console.log(`'${userAnswer}' is wrong answer ;(. The answer should be a number`);
-    return false;
-  }
-
-  if (correctAnswer !== userAnswerNumber) {
-    console.log(
-      `'${userAnswerNumber}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`,
-    );
-    return false;
-  }
-
-  return true;
-};
-
 const getAnswerAndQuestion = () => {
   const operation = getCalcOperation();
   const firstNum = getRandomNumber(0, 99);
   const secondNum = getRandomNumber(0, 99);
 
-  console.log(`Question: ${firstNum} ${operation} ${secondNum}`);
-
   const result = calcOperation(firstNum, secondNum, operation);
 
-  const userAnswer = readlineSync.question('Your answer: ');
-
-  return checkNumberQuestion(userAnswer, result);
+  return [`${firstNum} ${operation} ${secondNum}`, String(result)];
 };
 
 const startCalcGame = () => {
-  engine(getAnswerAndQuestion, 'What is the result of the expression?');
+  engine(description, getAnswerAndQuestion);
 };
 
 export default startCalcGame;

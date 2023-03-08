@@ -1,8 +1,7 @@
-import readlineSync from 'readline-sync';
 import engine from '../index.js';
-import {
-  getRandomNumber,
-} from '../utils.js';
+import getRandomNumber from '../utils.js';
+
+const description = 'What number is missing in the progression?';
 
 const getProgression = (firstElement, length, step) => Array.from({ length }).map(
   (el, i) => firstElement + (i * step),
@@ -29,28 +28,13 @@ const getAnswerAndQuestion = () => {
     }
   }
 
-  console.log(`Question: ${maskedProgression}`);
+  const correctAnswer = removedElement;
 
-  const userAnswer = readlineSync.question('Your answer: ');
-  const userAnswerNumber = Number(userAnswer);
-
-  if (!userAnswerNumber && userAnswerNumber !== 0) {
-    console.log(`'${userAnswer}' is wrong answer ;(. The answer should be a number`);
-    return false;
-  }
-
-  if (removedElement !== userAnswerNumber) {
-    console.log(
-      `'${userAnswerNumber}' is wrong answer ;(. Correct answer was '${removedElement}'.`,
-    );
-    return false;
-  }
-
-  return true;
+  return [maskedProgression, String(correctAnswer)];
 };
 
 const startProgressionGame = () => {
-  engine(getAnswerAndQuestion, 'What number is missing in the progression?');
+  engine(description, getAnswerAndQuestion);
 };
 
 export default startProgressionGame;

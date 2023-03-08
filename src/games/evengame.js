@@ -1,22 +1,19 @@
-import readlineSync from 'readline-sync';
 import engine from '../index.js';
-import {
-  checkBinaryQuestion, getRandomNumber, getIsEven,
-} from '../utils.js';
+import getRandomNumber from '../utils.js';
+
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+const getIsEven = (number) => number % 2 === 0;
 
 const getAnswerAndQuestion = () => {
   const randomNumber = getRandomNumber(1, 10);
-  const isEven = getIsEven(randomNumber);
+  const correctAnswer = getIsEven(randomNumber) ? 'yes' : 'no';
 
-  console.log(`Question: ${randomNumber}`);
-
-  const userAnswer = readlineSync.question('Your answer: ').toLowerCase();
-
-  return checkBinaryQuestion(userAnswer, isEven);
+  return [randomNumber, correctAnswer];
 };
 
 const starBrainEvenGame = () => {
-  engine(getAnswerAndQuestion, 'Answer "yes" if the number is even, otherwise answer "no".');
+  engine(description, getAnswerAndQuestion);
 };
 
 export default starBrainEvenGame;

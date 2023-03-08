@@ -1,8 +1,7 @@
-import readlineSync from 'readline-sync';
 import engine from '../index.js';
-import {
-  getRandomNumber, checkBinaryQuestion,
-} from '../utils.js';
+import getRandomNumber from '../utils.js';
+
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 
 const isPrime = (n) => {
   if (n < 2) {
@@ -19,17 +18,13 @@ const isPrime = (n) => {
 const getAnswerAndQuestion = () => {
   const num = getRandomNumber(0, 99);
 
-  const result = isPrime(num);
+  const correctAnswer = isPrime(num) ? 'yes' : 'no';
 
-  console.log(`Question: ${num}`);
-
-  const userAnswer = readlineSync.question('Your answer: ').toLowerCase();
-
-  return checkBinaryQuestion(userAnswer, result);
+  return [num, correctAnswer];
 };
 
 const startPrimeGame = () => {
-  engine(getAnswerAndQuestion, 'Answer "yes" if given number is prime. Otherwise answer "no".');
+  engine(description, getAnswerAndQuestion);
 };
 
 export default startPrimeGame;

@@ -1,11 +1,10 @@
 import readlineSync from 'readline-sync';
+import startNewGame from './cli.js';
 
 const countRounds = 3;
 
 const engine = (description, getQuestionAndAnswer) => {
-  console.log('Welcome to the Brain Games!');
-  const userName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${userName}!`);
+  const userName = startNewGame();
 
   console.log(description);
 

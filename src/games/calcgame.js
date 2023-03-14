@@ -12,18 +12,18 @@ const getCalcOperation = (firstNum, secondNum) => {
 
   switch (operation) {
     case '+': {
-      result.push(firstNum + secondNum);
       result.push(`${firstNum} + ${secondNum}`);
+      result.push(firstNum + secondNum);
       break;
     }
     case '-': {
-      result.push(firstNum - secondNum);
       result.push(`${firstNum} - ${secondNum}`);
+      result.push(firstNum - secondNum);
       break;
     }
     case '*': {
-      result.push(firstNum * secondNum);
       result.push(`${firstNum} * ${secondNum}`);
+      result.push(firstNum * secondNum);
       break;
     }
     default: {

@@ -6,10 +6,10 @@ const description = 'Answer "yes" if the number is even, otherwise answer "no".'
 const getIsEven = (number) => number % 2 === 0;
 
 const getAnswerAndQuestion = () => {
-  const randomNumber = getRandomNumber(1, 10);
-  const correctAnswer = getIsEven(randomNumber) ? 'yes' : 'no';
+  const question = getRandomNumber(1, 10);
+  const correctAnswer = getIsEven(question) ? 'yes' : 'no';
 
-  return [randomNumber, correctAnswer];
+  return [question, correctAnswer];
 };
 
 const starBrainEvenGame = () => {

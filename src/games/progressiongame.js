@@ -7,6 +7,21 @@ const getProgression = (firstElement, length, step) => Array.from({ length }).ma
   (el, i) => firstElement + (i * step),
 );
 
+const getMaskedProgression = (progression, removedElement) => {
+  let maskedProgression = '';
+
+  for (let i = 0; i < progression.length; i += 1) {
+    const element = progression[i];
+
+    if (element === removedElement) {
+      maskedProgression += '.. ';
+    } else {
+      maskedProgression += `${element} `;
+    }
+  }
+  return maskedProgression;
+};
+
 const getAnswerAndQuestion = () => {
   const progressionLength = getRandomNumber(5, 10);
   const progressionFirstElement = getRandomNumber(0, 99);
@@ -16,21 +31,11 @@ const getAnswerAndQuestion = () => {
   const remmovedElementIndex = getRandomNumber(0, progressionLength);
   const removedElement = progression[remmovedElementIndex];
 
-  let maskedProgression = '';
-
-  for (let i = 0; i < progressionLength; i += 1) {
-    const element = progression[i];
-
-    if (element === removedElement) {
-      maskedProgression += '.. ';
-    } else {
-      maskedProgression += `${element} `;
-    }
-  }
+  const question = getMaskedProgression(progression, removedElement);
 
   const correctAnswer = removedElement;
 
-  return [maskedProgression, String(correctAnswer)];
+  return [question, String(correctAnswer)];
 };
 
 const startProgressionGame = () => {

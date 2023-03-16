@@ -4,40 +4,24 @@ import getRandomNumber from '../utils.js';
 const description = 'What is the result of the expression?';
 const operations = ['+', '-', '*'];
 
-const getCalcOperation = (firstNum, secondNum) => {
-  const operationId = getRandomNumber(0, 3);
-
-  const operation = operations[operationId];
-  const result = [];
-
+const getCalcOperation = (operation, firstNum, secondNum) => {
   switch (operation) {
-    case '+': {
-      result.push(`${firstNum} + ${secondNum}`);
-      result.push(firstNum + secondNum);
-      break;
-    }
-    case '-': {
-      result.push(`${firstNum} - ${secondNum}`);
-      result.push(firstNum - secondNum);
-      break;
-    }
-    case '*': {
-      result.push(`${firstNum} * ${secondNum}`);
-      result.push(firstNum * secondNum);
-      break;
-    }
-    default: {
-      throw new Error('unkown operation');
-    }
+    case '+': return firstNum + secondNum;
+    case '-': return firstNum - secondNum;
+    case '*': return firstNum * secondNum;
+    default: return null;
   }
-
-  return result;
 };
 
 const getAnswerAndQuestion = () => {
   const firstNum = getRandomNumber(0, 99);
   const secondNum = getRandomNumber(0, 99);
-  const [question, correctAnswer] = getCalcOperation(firstNum, secondNum);
+
+  const operationId = getRandomNumber(0, 3);
+  const operation = operations[operationId];
+
+  const question = `${firstNum} ${operation} ${secondNum}`;
+  const correctAnswer = getCalcOperation(operation, firstNum, secondNum);
 
   return [question, String(correctAnswer)];
 };
